@@ -39,9 +39,9 @@
 {/snippet}
 
 <div
-	class="group/card relative rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+	class="group/card relative h-full rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
 >
-	<Card class="relative p-0">
+	<Card class="relative h-full p-0">
 		<img
 			src={product.image}
 			alt={product.name}
@@ -51,7 +51,7 @@
 			<Badge variant="secondary" class="absolute start-3 top-3 z-10">{product.tag}</Badge>
 		{/if}
 
-		<CardContent class="flex flex-col gap-3 p-4">
+		<CardContent class="flex h-full flex-col gap-3 p-4">
 			<div class="flex flex-col gap-1">
 				<div class="flex items-start justify-between gap-3">
 					<h3 class="text-base font-medium leading-snug">{product.name}</h3>
@@ -61,12 +61,15 @@
 			</div>
 
 			{#if qty === 0}
-				<Button onclick={addOne} class="bg-sunflower text-sunflower-foreground hover:bg-sunflower/80">
+				<Button
+					onclick={addOne}
+					class="mt-auto bg-sunflower text-sunflower-foreground hover:bg-sunflower/80"
+				>
 					<PlusIcon data-icon="inline-start" />
 					Agregar
 				</Button>
 			{:else}
-				<div class="flex items-center justify-between gap-2">
+				<div class="mt-auto flex items-center justify-between gap-2">
 					<div class="flex items-center gap-2">
 						<Button
 							size="icon-sm"

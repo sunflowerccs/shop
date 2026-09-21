@@ -59,16 +59,18 @@
 
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
 		{#each products as product, i}
-			<div class="reveal" use:reveal={{ delay: (i % 3) * 90 }}>
+			<div class="reveal h-full" use:reveal={{ delay: (i % 3) * 90 }}>
 				<ProductCard {product} />
 			</div>
 		{/each}
+
+		<div class="reveal h-full" use:reveal={{ delay: (products.length % 3) * 90 }}>
+			<QuoteCta />
+		</div>
 	</div>
 </section>
 
 <Steps />
-
-<QuoteCta />
 
 <Footer />
 
